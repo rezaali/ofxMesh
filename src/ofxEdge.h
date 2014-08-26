@@ -29,6 +29,7 @@ public:
     ofVec3f &getCentroid();
 
     ofxEdge *splitEdge(ofxVertex *splitVert); //Returns the other edge
+    int getNumFaces(); 
     
     void addFace(ofxFace *face);
     

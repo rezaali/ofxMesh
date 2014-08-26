@@ -270,6 +270,15 @@ void ofxMesh::calculateCentroid()
     centroid/=(float)verts.size();
 }
 
+void ofxMesh::computeFaceCentroids()
+{
+    for(vector<ofxFace *>::iterator it = faces.begin(); it != faces.end(); ++it)
+    {
+        ofxFace *f = (*it);
+        f->calculateCentroid();
+    }
+}
+
 ofVec3f &ofxMesh::getCentroid()
 {
     return centroid;
@@ -537,6 +546,16 @@ ofxVertex *ofxMesh::getVertex(int index)
 vector<ofxVertex *> &ofxMesh::getVertices()
 {
     return verts; 
+}
+
+vector<ofxEdge *> &ofxMesh::getEdges()
+{
+    return edges;
+}
+
+vector<ofxFace *> &ofxMesh::getFaces()
+{
+    return faces;
 }
 
 ofRectangle ofxMesh::getBoundingRect()

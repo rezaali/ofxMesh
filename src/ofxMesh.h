@@ -21,6 +21,7 @@ public:
     
     void calculateBoundingBox(); 
     void calculateCentroid();
+    void computeFaceCentroids(); 
     ofVec3f &getCentroid();
     void center();
     float getWidth();
@@ -69,9 +70,13 @@ public:
     int getNumFaces();
     
     ofxVertex *getVertex(int index);
-    vector<ofxVertex *> &getVertices(); 
+    vector<ofxVertex *> &getVertices();
+    
     ofxFace *getFace(int index);
+    vector<ofxFace *> &getFaces();
+    
     ofxEdge *getEdge(int index);
+    vector<ofxEdge *> &getEdges();
     
     ofxEdge *getEdge(ofIndexType i0, ofIndexType i1);
     ofxEdge *splitEdge(ofxEdge *e, ofxVertex *ep);
